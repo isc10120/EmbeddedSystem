@@ -1,5 +1,5 @@
 Exercise 2
------------   
+==========  
 
 + 사용한 메인보드: MSP-EXP432P4111 (ARM Cortex-M4)
 + 사용한 툴: Code Composer Studio   
