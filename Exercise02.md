@@ -1,8 +1,7 @@
 Exercise 2
 ==========  
 
-+ 사용한 메인보드: MSP-EXP432P4111 (ARM Cortex-M4)
-+ 사용한 툴: Code Composer Studio   
++ 실습목표: 메인보드 led에 빨간 불이 점점 더 빨리 깜빡거리게 만든다.
 
 ```c
 #include "msp.h"
