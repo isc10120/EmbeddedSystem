@@ -2,30 +2,31 @@ Exercise 2
 ==========   
 
 + 실습목표: 메인보드 led에 빨간 불이 점점 더 빨리 깜빡거리게 만든다.
-  
-```c
-#include "msp.h"
-/**
- * main.c
- */
-void main(void)
-{
-	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
-	P1->DIR |=BIT0;
-	int i=100000;
-	while(1){
-	    P1->OUT=BIT0;
-	    int j;
-	    for(j=0;j<i;j++)
-	        ;
-	    P1->OUT=0;
-	    for(j=0;j<i;j++)
-	        ;
-	    if(i<20000) continue;
-	    i-=5000;
-	}
-}
-```
+> ## 코드:
+>
+> ```c
+> #include "msp.h"
+> /**
+>  * main.c
+>  */
+> void main(void)
+> {
+> 	 WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
+> 	 P1->DIR |=BIT0;
+>	 int i=100000;
+>	 while(1){
+>	     P1->OUT=BIT0;
+>	     int j;
+>	     for(j=0;j<i;j++)
+>	         ;
+>	     P1->OUT=0;
+>	     for(j=0;j<i;j++)
+>	         ;
+>	     if(i<20000) continue;
+>	     i-=5000;
+>	 }
+> }
+> ```
 
 ###### watchdog timer(WTD)는 MCU의 operation을 감시하여 의도치 않은 행동을 하거나 너무 오래 지속될 때 reset신호를 보내므로, 멈춰놓는다.
 ###### 구조체로 선언된 P1을 이용하여 Port1의 Direction에 접근한다. 해당 바이트의 msb에 1을 주면 Port1의 빨간색 led를 활성화시키게 된다.
