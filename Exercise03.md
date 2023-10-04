@@ -8,7 +8,7 @@ Exercise 3
  */
 void main(void)
 {
-	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
+	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;  // stop watchdog timer
 	volatile unsigned char *p1_dir= (unsigned char*)(0x40004C04);
 	volatile unsigned char *p2_dir= (unsigned char*)(0x40004C05);
 	volatile unsigned char *p1_out= (unsigned char*)(0x40004C02);
@@ -23,7 +23,7 @@ void main(void)
 
 	int i;
 	unsigned char j = 1;
-  //output register는 읽어올 수 없으므로 j를 사용
+  	//output register는 읽어올 수 없으므로 j를 사용
 
 	while(1){
 	    *p1_out = BIT0;
