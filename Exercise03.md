@@ -23,7 +23,7 @@ void main(void)
 
 	int i;
 	unsigned char j = 1;
-  	//output register는 읽어올 수 없으므로 j를 사용
+  	// output register는 읽어올 수 없으므로 j를 사용
 
 	while(1){
 	    *p1_out = BIT0;
@@ -37,3 +37,4 @@ void main(void)
 	}
 }
 ```
+
