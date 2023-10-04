@@ -19,7 +19,7 @@ void main(void)
 
 	// P1->DIR |=BIT0;
 	// P2->DIR |=7;
-	// 구조체 사용하지 말고 직접 메모리에 접근
+	// 구조체 사용하지 말고 직접 메모리 값을 입력해서 사
 
 	int i;
 	unsigned char j = 1;
