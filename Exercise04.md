@@ -1,3 +1,6 @@
+Exercise3
+=========
++ 실습목표: 메인보드의 오른쪽 led에 색이 G, GB, B, RB, R, RG, RGB 순서대로 번갈아 나오게 한다. 비트 flipping을 연습한다.
 ```c
 #include "msp.h"
 
