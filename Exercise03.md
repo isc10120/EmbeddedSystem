@@ -9,8 +9,8 @@ Exercise 3
 void main(void)
 {
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;  // stop watchdog timer
-	volatile unsigned char *p1_dir= (unsigned char*)(0x40004C04);
-	volatile unsigned char *p2_dir= (unsigned char*)(0x40004C05);
+	unsigned char *p1_dir= (unsigned char*)(0x40004C04);
+	unsigned char *p2_dir= (unsigned char*)(0x40004C05);
 	volatile unsigned char *p1_out= (unsigned char*)(0x40004C02);
 	volatile unsigned char *p2_out= (unsigned char*)(0x40004C03);
 
@@ -48,10 +48,10 @@ direction의 lsb부터 3개 비트를 1로 설정하여 각각 led의 빨간색,
 초록색, 파란색이 번갈아 나타날 수 있도록 했다. 변수를 따로 선언한 이유는 output 레지스터에서는
 값을 읽어올 수 없으므로 현재 무슨 색인지 알 수 있게 하기 위해서이다.
    
-*volatile 키워드를 사용하는 이유:  코드 상에서 사용되지 않은 변수의
-값이 바뀐다면 컴파일러가 최적화 과정에서 해당 변수를 처음부터 바꾼 값으로 설정하기 때문. 예를
-들어 x=1; x=2; 라는 코드는 컴파일 후 x=1; 이 사라지고 x=2; 만 수행하게 된다. x를 1로 설정한 후
-아무 곳에도 x를 사용하지 않고 다시 2로 바꾸었기 때문이다. 따라서 output레지스터 주소를 저장한
-변수를 역참조하여 값을 계속 바꾼다면, 컴파일 후에는 코드 상의 마지막 값으로 처음부터 고정된다. 이
-문제 때문에 해당하는 변수들이 모두 최적화 대상에서 제외되도록 volatile로 선언해 주었다.
+> *volatile 키워드를 사용하는 이유:  코드 상에서 사용되지 않은 변수의
+> 값이 바뀐다면 컴파일러가 최적화 과정에서 해당 변수를 처음부터 바꾼 값으로 설정하기 때문. 예를
+> 들어 x=1; x=2; 라는 코드는 컴파일 후 x=1; 이 사라지고 x=2; 만 수행하게 된다. x를 1로 설정한 후
+> 아무 곳에도 x를 사용하지 않고 다시 2로 바꾸었기 때문이다. 따라서 output레지스터 주소를 저장한
+> 변수를 역참조하여 값을 계속 바꾼다면, 컴파일 후에는 코드 상의 마지막 값으로 처음부터 고정된다. 이
+> 문제 때문에 해당하는 변수들이 모두 최적화 대상에서 제외되도록 volatile로 선언해 주었다.
 
