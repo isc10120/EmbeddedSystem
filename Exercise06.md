@@ -33,9 +33,9 @@ void main(void)
 	        i-=1500000;  // 0.5 sec
 	    }
 	    int j=9;
-	    while(j--){  // 0.5 sec
+	    while(j--){ 
 	        P1->OUT=1;
-	        SysTick_Wait(i);  // i = 1500000
+	        SysTick_Wait(i);  // i = 1500000 (0.5 sec)
 	        P1->OUT=0;
 	        SysTick_Wait(i);
 	    }
