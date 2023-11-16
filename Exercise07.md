@@ -12,21 +12,22 @@ void PORT1_IRQHandler(){
         if(color<4)
             color*=2;
         else color=1;
-        P2->OUT = color;
+
         P1->IFG &= ~BIT1;
     }
     if(P1->IFG & BIT4){
         if(color==1)
             color=4;
         else color/=2;
-        P2->OUT = color;
+
         P1->IFG &= ~BIT4;
     }
+    P2->OUT = color;
 }
 
 void main(void)
 {
-	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;    // stop watchdog timer
+	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
 
 	P1->DIR = ~(BIT1|BIT4);
 	P1->REN = BIT1|BIT4;
@@ -43,4 +44,5 @@ void main(void)
 	P2->OUT = color;
 	while(1);
 }
+
 ```
