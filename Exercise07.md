@@ -26,7 +26,7 @@ void PORT1_IRQHandler(){
 
 void main(void)
 {
-	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
+	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;    // stop watchdog timer
 
 	P1->DIR = ~(BIT1|BIT4);
 	P1->REN = BIT1|BIT4;
