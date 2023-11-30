@@ -17,12 +17,6 @@ void main(void)
     /* ADC results buffer */
     uint16_t resultsBuffer[2];
 
-    /* string buffer for sprintf() */
-    char string[10];
-
-    /* Joystick, S1, S2 buttons in boostxl-edumkii flag */
-    int buttonPressed,bs1Pressed,bs2Pressed;
-
     /* Initializes display */
     Crystalfontz128x128_Init();
 
