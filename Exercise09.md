@@ -71,14 +71,17 @@ void main(void)
         resultsBuffer[0] = ADC14_getResult(ADC_MEM0);
         resultsBuffer[1] = ADC14_getResult(ADC_MEM1);
 
+        int tmpx = resultsBuffer[0]/88-27;
+        int tmpy = 128-resultsBuffer[1]/88+33;
+
+        if(tmpx==x && tmpy==y) continue;
+
         Graphics_drawStringCentered(&g_sContext,
                                                 (int8_t *)" ",
                                                 1,
                                                 x,
                                                 y,
                                                 OPAQUE_TEXT);
-        int tmpx = resultsBuffer[0]/88-30;
-        int tmpy = 128-resultsBuffer[1]/88+30;
         if(tmpx<128 && tmpx>0) x = tmpx;
         else {
             if(tmpx>128) x = 127;
@@ -100,5 +103,4 @@ void main(void)
 
     }
 }
-
 ```
