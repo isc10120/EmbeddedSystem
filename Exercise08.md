@@ -3,6 +3,7 @@ Exercise 8
 
 + 실습목표: ﻿extension board(boostxl-edumkii)의 LCD를 API를 이용해 다뤄보고 LDC에 이름과 *을 출력한다. 
 *은 extension board에 달려 있는 두개의 큰 버튼(P5.1, P3.5)를 눌러 위아래로 움직이게 할 수 있다.
+
 > 코드:
 > ------
 > ```c
