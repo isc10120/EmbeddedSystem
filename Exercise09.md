@@ -78,13 +78,13 @@ void main(void)
                                                 OPAQUE_TEXT);
         if(tmpx<128 && tmpx>0) x = tmpx;
         else {
-            if(tmpx>128) x = 127;
-            else if(tmpx<0) x = 1;
+            if(tmpx>=128) x = 127;
+            else if(tmpx<=0) x = 1;
         }
         if(tmpy<128 && tmpy>0) y = tmpy;
         else {
-            if(tmpy>128) y = 127;
-            else if(tmpy<0) y = 1;
+            if(tmpy>=128) y = 127;
+            else if(tmpy<=0) y = 1;
         }
 
         Graphics_drawStringCentered(&g_sContext,
