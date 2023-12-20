@@ -57,5 +57,16 @@ Exercise 5
 > 
 > }
 > ```
-
+   
 + 설명: 다음 FSM(Finite State Machine)과 같이 동작하도록 코드를 작성했다.
+  <img src="https://github.com/isc10120/EmbeddedSystem/assets/112538487/b402b190-c9a5-443a-93a7-78124c6bf942" width="500" height="500"/>   
+P1.1 Pressed State와 P1.4 Pressed State에서는 항상 왼쪽 LED에 빨간 불이 켜져 있도록 하고, 다른
+State에 진입하면 꺼지도록 한다.   
+Action1은 오른쪽 LED의 색이 R이면 B로, B이면 G로, G이면 R로 바꾸는 동작이고,   
+Action2는 오른쪽 LED의 색이 R이면 G로, G이면 B로, B이면 R로 바꾸는 동작이다.   
+이때 output 레지스터에서는 값을 읽어올 수 없으므로 오른쪽 LED의 색을 저장하는 변수를 따로
+선언해주었다.   
+각 버튼이 눌렸는지 여부는 define한 S1BUT와 S2BUT를 통해 알 수 있도록 했는데, Pull-up 레지스터를
+사용했으므로 P1 input 레지스터의 각 핀이 0, 즉 low일때 버튼이 눌렸다고 판단한다.
+
+
