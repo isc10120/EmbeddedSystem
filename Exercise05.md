@@ -14,8 +14,8 @@ void main(void)
 	WDT_A->CTL = WDT_A_CTL_PW | WDT_A_CTL_HOLD;		// stop watchdog timer
 
 	P1->DIR = ~(1<<1|1<<4);   // set 1, 4 as input, set 0 as output
-	P1->REN = (1<<1)|(1<<4);  // enable resisters
-	P1->OUT = (1<<4)|(1<<1);  // select pullup
+	P1->REN = 1<<1|1<<4;  // enable resisters
+	P1->OUT = 1<<4|1<<1;  // select pullup
 
 	P2->DIR=7;
 	int color = 0, s1but_bs = 0, s2but_bs = 0;
