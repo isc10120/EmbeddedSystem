@@ -71,7 +71,6 @@ Exercise 8
 >         bs1count=0;
 >         if (P5->IN & BIT1){
 >             if (bs1state==DOWN) {
->                 bs1count=0;
 >                 Graphics_drawString(&g_sContext, (int8_t *)" ", 1, x*6, y*7, OPAQUE_TEXT);
 >                 if (y>1) y--;
 >                 Graphics_drawString(&g_sContext, (int8_t *)"*", 1, x*6, y*7, OPAQUE_TEXT);
@@ -91,7 +90,6 @@ Exercise 8
 >         bs2count=0;
 >          if (P3->IN & BIT5){
 >              if (bs2state==DOWN) {
->                  bs2count=0;
 >                  Graphics_drawString(&g_sContext, (int8_t *)" ", 1, x*6, y*7, OPAQUE_TEXT);
 >                  if (y<17) y++;
 >                  Graphics_drawString(&g_sContext, (int8_t *)"*", 1, x*6, y*7, OPAQUE_TEXT);
