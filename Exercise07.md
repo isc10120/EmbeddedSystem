@@ -54,7 +54,7 @@ Exercise 7
 > 
 > ```
 
-   + 설명: 튼들을 사용하기 위해 P1->DIR에서 해당하는 핀(1,4)을 0으로 설정하고, P1->REN과 P1->OUT에서
+   + 설명: 버튼들을 사용하기 위해 P1->DIR에서 해당하는 핀(1,4)을 0으로 설정하고, P1->REN과 P1->OUT에서
 해당하는 핀을 1로 설정해 Pull-up 저항을 사용하도록 한다. 또 P2->DIR의 해당하는 핀(0-2)을 1로
 설정하여 P2 LED의 RGB색 모두 사용할 수 있도록 한다.
 Cortex-M4프로세서에 내장된 IC(Interrupt Controller)인 NVIC(Nested Vectored Interrupt Controller)는
@@ -71,4 +71,9 @@ enable해야 한다. 그리고 P1->IES의 핀1,4에 1을 주어 high-to-low(fall
 눌렸을 때 flag의 4번 핀이 1이 된다는 것을 이용해 각각 눌릴 때마다 P2 LED의 색이 R->G->B->G... ,
 R->B->G->R... 순서로 바뀌도록 해주고, 해당하는 flag를 다시 0으로 바꿔주었다. 이때
 output레지스터는 읽어올 수 없으므로 전역변수 color를 사용했다.
+> *참고:
+> IE Register: Interrupt Enable Register
+> IES Register: Interrupt Edge Select Register
+> IFG Register: Interrupt Flag Register
+> ISER# Register: IRQ ## to ## Set Enable Register*
 
