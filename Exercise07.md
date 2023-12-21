@@ -55,12 +55,12 @@ Exercise 7
 > ```
 
    + 설명: 튼들을 사용하기 위해 P1->DIR에서 해당하는 핀(1,4)을 0으로 설정하고, P1->REN과 P1->OUT에서
-해당하는 핀을 1로 설정해 Pull-up 저항을 사용하도록 한다. 또 P2->DIR의 해당하는 핀(0~2)을 1로
+해당하는 핀을 1로 설정해 Pull-up 저항을 사용하도록 한다. 또 P2->DIR의 해당하는 핀(0-2)을 1로
 설정하여 P2 LED의 RGB색 모두 사용할 수 있도록 한다.
 Cortex-M4프로세서에 내장된 IC(Interrupt Controller)인 NVIC(Nested Vectored Interrupt Controller)는
 인터럽트가 발생하면, 메모리의 인터럽트 벡터 테이블-ISR(Interrupt Service Routine)함수의 포인터
 배열-에서 해당 인터럽트에 맞는 ISR함수의 위치를 찾아 실행한다. 각 ISR에 매핑된 인터럽트 핸들러는
-NVIC->ISER 배열을 통해 enable할 수 있다. ISER[0]은 0~31, ISER[1]은 32~63으로 각각
+NVIC->ISER 배열을 통해 enable할 수 있다. ISER[0]은 0-31, ISER[1]은 32-63으로 각각
 32비트씩이므로, P1 핸들러에 해당하는 35를 enable하려면 ISER[1]의 3번째 비트를 1로 설정해야 한다.
 또한 인터럽트 자체를 사용하기 위해 P1->IE에서 핀1,4에 1을 주어 해당하는 인터럽트(S1, S2버튼)를
 enable해야 한다. 그리고 P1->IES의 핀1,4에 1을 주어 high-to-low(falling edge, 풀업을 사용했으므로
