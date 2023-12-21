@@ -71,9 +71,10 @@ enable해야 한다. 그리고 P1->IES의 핀1,4에 1을 주어 high-to-low(fall
 눌렸을 때 flag의 4번 핀이 1이 된다는 것을 이용해 각각 눌릴 때마다 P2 LED의 색이 R->G->B->G... ,
 R->B->G->R... 순서로 바뀌도록 해주고, 해당하는 flag를 다시 0으로 바꿔주었다. 이때
 output레지스터는 읽어올 수 없으므로 전역변수 color를 사용했다.
-  > *참고:   
-  > IE Register: Interrupt Enable Register   
-  > IES Register: Interrupt Edge Select Register   
-  > IFG Register: Interrupt Flag Register   
-  > ISER# Register: IRQ ## to ## Set Enable Register*
+
+     > *참고:   
+     > IE Register: Interrupt Enable Register   
+     > IES Register: Interrupt Edge Select Register   
+     > IFG Register: Interrupt Flag Register   
+     > ISER# Register: IRQ ## to ## Set Enable Register*
 
